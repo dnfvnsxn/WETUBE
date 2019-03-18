@@ -22,11 +22,12 @@ npm install nodemon -D
 - 저장할 때 마다 서버 새로시작
 
 - 문제: 저장하면 두 번 재시작함
+
   - 일단 저장하면 재시작하고 babel이 코드의 변화를 감지하고 서버를 재시작
   - package.json 시작 딜레이 추가
 
-```json
-"scripts": {
-    "start": "nodemon --exec babel-node index.js --delay 2"
-  }
-```
+  ```json
+  "scripts": {
+      "start": "nodemon --exec babel-node index.js --delay 2"
+    }
+  ```
