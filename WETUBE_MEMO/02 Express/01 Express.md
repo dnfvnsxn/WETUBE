@@ -79,8 +79,15 @@ function handleListening() {
 app.listen(PORT, handleListening);
 ```
 
-- 기본적인 작동방식: 서버를 생성하고 route를 생성하고 그것에 응답하는 방식
+## GET과 POST
+
+**http의 기본적인 작동방식: 서버를 생성하고 route를 생성하고 그것에 응답하는 방식**
+
+- GET request로는 정보를 전달할 수 없음
+- POST request로는 정보를 전달할 수 있음
+
 - [GET과 POST](https://hongsii.github.io/2017/08/02/what-is-the-difference-get-and-post/)
+
   - HTTP는 웹상에서 클라이언트와 서버 간에 요청/응답으로 데이터를 주고 받을 수 있는 프로토콜
   - GET: 서버로부터 정보를 조회하기 위해 설계된 메소드
     - GET은 요청을 전송할 때 필요한 데이터를 Body에 담지 않고, 쿼리스트링을 통해 전송
@@ -91,10 +98,30 @@ app.listen(PORT, handleListening);
     - request object
     - response object
 
+## Handling Routes
+
+- index.js
+
 ```js
+const express = require("express");
+const app = express();
+
+const PORT = 4000;
+
+function handleListening() {
+  console.log(`Listening on: http://localhost:${PORT}`);
+}
+
 function handlehome(req, res) {
   res.send("Hello from home");
 }
 
+function handleProfile(req, res) {
+  res.send("You are on my profile");
+}
+
 app.get("/", handlehome);
+app.get("/profile", handleProfile);
+
+app.listen(PORT, handleListening);
 ```
