@@ -56,14 +56,12 @@ const globalRouter = express.Router();
 export default globalRouter
 ```
 
-
-
-
+## Controller
 - 보통 프로젝트에 있는 각 모델마다 컨트롤러를 만들게 됨
 - 컨트롤러는 어떤일이 어떻게 발생하는지에 관한 로직
 
 
-**구조정리**
+## 구조정리
 - init.js에는 app.js에서 import 한 application이 있음
 - application에 관한 코드들은 app.js에 담겨 있음
     - express를 import
