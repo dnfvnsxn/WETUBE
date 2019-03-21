@@ -3,12 +3,9 @@ import morgan from "morgan";
 import helmet from "helmet";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
+import {userRouter} from "./router"
+
 const app = express();
-
-const PORT = 4000;
-
-const handleListening = () =>
-  console.log(`Listening on: http://localhost:${PORT}`);
 
 const handlehome = (req, res) => res.send("Hello from home");
 
@@ -27,5 +24,6 @@ app.use(morgan(("dev")))
 
 app.get("/", handlehome);
 app.get("/profile", handleProfile);
+app.use("/user",userRouter);
 
-app.listen(PORT, handleListening);
+export default app;
