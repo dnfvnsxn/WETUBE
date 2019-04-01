@@ -3,7 +3,7 @@
 - PORT 변수에는 ;를 붙이지 않음
 - .env
 ```env
-MONGO_URL="mongodb://localhost:27017/wetube";
+MONGO_URL="mongodb://localhost:27017/wetube"
 PORT=4000
 ```
 - .env의 정보 접근
