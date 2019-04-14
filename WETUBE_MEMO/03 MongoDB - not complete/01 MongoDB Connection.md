@@ -19,6 +19,7 @@ sudo apt install mongodb-server
 mongod
 mongo
 ```
+
 ```sh
 MongoDB shell version v4.0.8
 connecting to: mongodb://127.0.0.1:27017/?gssapiServiceName=mongodb
@@ -35,7 +36,7 @@ MongoDB server version: 4.0.8
 npm install mongoose
 ```
 
-- **dotenv** 
+- **dotenv**
 - 코드에 있는 url로 부터 유저 데이터를 보는 것을 원하지 않을 떄 사용
 - 데이터베이스를 숨겨 놓기 위해 사용
 - 설치
@@ -46,27 +47,27 @@ npm install dotenv
 
 - db.js
 - mongoose.connect: url 및 configuration
-```js
-import mongoose, { mongo } from "mongoose"
 
-mongoose.connect(
-  "mongodb://localhost:27017/wetube",
-  {
-    useNewUrlParser:true,
-    useFindAndModify: false
-  }
-);
+```js
+import mongoose, { mongo } from "mongoose";
+
+mongoose.connect("mongodb://localhost:27017/wetube", {
+  useNewUrlParser: true,
+  useFindAndModify: false
+});
 
 const db = mongoose.connection;
 
 const handleOpen = () => console.log("✅ Connected to DB");
-const handleError = () => console.log("❌ Error on DB Connection:${error}")
+const handleError = () => console.log("❌ Error on DB Connection:${error}");
 
-db.once("open",handleOpen)
-db.on("error",handleError)
+db.once("open", handleOpen);
+db.on("error", handleError);
 ```
+
 - init.js에서 연결
 - init.js
+
 ```js
 import "./db";
 ```
